@@ -28,7 +28,7 @@ const quoteSchema = new mongoose.Schema({
 const Quote = mongoose.model("Quote", quoteSchema);
 
 // GET endpoint to retrieve a random quote from MongoDB
-app.get('/api/quote', async (req, res) => {
+app.get('/api/getQuote', async (req, res) => {
   try {
     const quotes = await Quote.find();
     if (quotes.length === 0) return res.status(404).json({ error: "No quotes found." });
@@ -40,7 +40,7 @@ app.get('/api/quote', async (req, res) => {
 });
 
 // POST endpoint to add a new quote to MongoDB
-app.post('/api/quote', async (req, res) => {
+app.post('/api/PostQuote', async (req, res) => {
   const { quote } = req.body;
 
   if (!quote || typeof quote !== 'string') {

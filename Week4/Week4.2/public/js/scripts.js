@@ -4,7 +4,7 @@ document.getElementById('quoteForm').addEventListener('submit', async function (
   const quote = document.getElementById('quoteInput').value;
 
   try {
-    const response = await fetch('/api/quote', {
+    const response = await fetch('/api/PostQuote', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quote })
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (fetchQuoteBtn && quoteDisplay) {
     fetchQuoteBtn.addEventListener('click', async function () {
       try {
-        const response = await fetch('/api/quote');
+        const response = await fetch('/api/getQuote');
         const data = await response.json();      
 
         if (data.length === 0) {
