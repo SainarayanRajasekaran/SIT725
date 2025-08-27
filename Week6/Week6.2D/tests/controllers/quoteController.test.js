@@ -42,7 +42,7 @@ describe('Controller: quoteController', function () {
   });
 
 
-  it('createQuote → 200 + returns saved doc', async () => {
+  it('createQuote & status code 200 & returns saved quote', async () => {
     const req = { body: { quote: 'Controller path', author: 'Unit' } };
     const res = mockRes();
 
@@ -58,7 +58,7 @@ describe('Controller: quoteController', function () {
   });
 
 
-  it('createQuote → 400 on missing quote', async () => {
+  it('createQuote & status code 400 on missing quote', async () => {
     const req = { body: {} };
     const res = mockRes();
 
